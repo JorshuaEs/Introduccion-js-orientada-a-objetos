@@ -28,11 +28,22 @@ cliente2.rutCliente = '47755555';
 const cuentaDeMaria = new CuentaCorriente();
 cuentaDeMaria.numero = '2';
 cuentaDeMaria.agencia = '001';
-cuentaDeMaria.cliente = cliente2;
+//cuentaDeMaria.cliente = cliente2; //toda variable definida sin valor es mejor inicianizarla null esto permite hace una mejor gestion del codigo y la memorua
 
-cuentaDeLeonardo.transferirParaCuenta(100, cuentaDeMaria)
+if (cuentaDeMaria.cliente)
+    console.log(cuentaDeMaria.cliente);
+else
+    console.log(cuentaDeMaria);
 
-console.log(`Cuenta de maria`, cuentaDeMaria)
+let parametroValor = 100;
+/*
+console.log('Parámetro valor', parametroValor);
+cuentaDeLeonardo.transferirParaCuenta(parametroValor, cuentaDeMaria);
+console.log('Parámetro valor', parametroValor);
+
+const saldoMaria = cuentaDeMaria.verSaldo();
+
+console.log(`Cuenta de maria`, cuentaDeMaria)*/
 
 /*const saldoMaria = cuentaDeMaria.verSaldo();
 console.log(`El saldo actual (Cuenta Maria) ${saldoMaria}`);

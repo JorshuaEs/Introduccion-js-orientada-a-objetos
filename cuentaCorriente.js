@@ -6,7 +6,10 @@ export class CuentaCorriente
     #saldo;//variables con atributos privados
 
     constructor(){
-        this.cliente = null;
+        this.cliente = null; 
+        //undefined, se utilizará ya que está declarado pero no se ha definido cuales son sus datos
+        //la consola no puede acceder a las variables undefined
+        //Una buena practica es no tener variables undefined y se no se declara todavia es recomnedable utilizar null
         this.numero = '';
         this.agencia = '';
         this.#saldo = 0;
