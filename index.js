@@ -1,32 +1,36 @@
+//Definición de clases
 class Cliente
 {
     nombreCliente;
     dniCliente;
-    numeroCuenta;
-    saldoCuenta;
+    rutCliente;
 }//clase, es el molde para generar las instacias necesarias para manejar la información
-const cliente1 = new Cliente();
 
-cliente1.nombreCliente ="Jose";
-cliente1.dniCliente = "13232";
-cliente1.numeroCuenta = "12343250";
-cliente1.saldoCuenta = 2000;
+class CuentaCorriente
+{
+    numero;
+    saldo;
+    agencia;
 
-const cliente2 = new Cliente();
+    constructor(){
+        this.saldo = 0;
+        this.numero = '';
+        this.agencia = '';
+    }
 
-cliente2.nombreCliente = "Leonardo";
-cliente2.dniCliente = "13804050";
-cliente2.numeroCuenta = "123434343"
-cliente2.saldoCuenta = 1000;
+    depositoEnCuenta(valor){
+        this.saldo += valor;//this define la cuenta corriente actual
+    } 
 
-const cliente3 = new Cliente();
+    retirarDeCuenta(valor){
+        this.saldo -= valor;  //tambén se puede utilizar this.saldo = this.saldo - valor
+    }
+}
 
-cliente3.nombreCliente = "Maria";
-cliente3.dniCliente = "55212";
-cliente3.numeroCuenta = "532135135"
-cliente3.saldoCuenta = 1254;
+cuentaDeLeonardo = new CuentaCorriente();
+//cuentaDeLeonardo.saldo = 0; una forma de corregir el error de tipo de dato
 
-
-console.log(cliente1);
-console.log(cliente2);
-console.log(cliente2);
+cuentaDeLeonardo.depositoEnCuenta(100);
+console.log(cuentaDeLeonardo);
+cuentaDeLeonardo.retirarDeCuenta(50);
+console.log(cuentaDeLeonardo);
