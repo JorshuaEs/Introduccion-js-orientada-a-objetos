@@ -20,20 +20,32 @@ class CuentaCorriente
 
     depositoEnCuenta(valor){
         if(valor > 0)//condicion para que acepte unicamente valores positivos
-        this.#saldo += valor;//this define la cuenta corriente actual
+            this.#saldo += valor;//this define la cuenta corriente actual
+        return this.#saldo;
     } 
 
     retirarDeCuenta(valor){
         if(valor <= this.#saldo)//condición para no pasar el valor que se tiene y quedar en negativo
         this.#saldo -= valor;  //tambén se puede utilizar this.saldo = this.saldo - valor
+        return this.#saldo;
+    }
+    
+    verSaldo(){
+        return this.#saldo;
     }
 }
 
 cuentaDeLeonardo = new CuentaCorriente();
 //cuentaDeLeonardo.saldo = 0; una forma de corregir el error de tipo de dato
+let saldo = cuentaDeLeonardo.verSaldo();
+console.log(`El saldo actual es ${saldo}`);
 
-cuentaDeLeonardo.depositoEnCuenta(100);
-console.log(cuentaDeLeonardo);
-cuentaDeLeonardo.retirarDeCuenta(100);
-console.log(cuentaDeLeonardo);
-cuentaDeLeonardo.depositoEnCuenta(-10);
+
+saldo = cuentaDeLeonardo.depositoEnCuenta(100);
+console.log(`El saldo actual es ${saldo}`);
+
+saldo = cuentaDeLeonardo.retirarDeCuenta(100);
+console.log(`El saldo actual es ${saldo}`);
+
+saldo = cuentaDeLeonardo.depositoEnCuenta(10);
+console.log(`El saldo actual es ${saldo}`);
