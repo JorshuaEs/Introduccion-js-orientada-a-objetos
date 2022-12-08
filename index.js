@@ -9,21 +9,23 @@ class Cliente
 class CuentaCorriente
 {
     numero;
-    saldo;
+    #saldo;//variables con atributos privados
     agencia;
 
     constructor(){
-        this.saldo = 0;
+        this.#saldo = 0;
         this.numero = '';
         this.agencia = '';
     }
 
     depositoEnCuenta(valor){
-        this.saldo += valor;//this define la cuenta corriente actual
+        if(valor > 0)//condicion para que acepte unicamente valores positivos
+        this.#saldo += valor;//this define la cuenta corriente actual
     } 
 
     retirarDeCuenta(valor){
-        this.saldo -= valor;  //tambén se puede utilizar this.saldo = this.saldo - valor
+        if(valor <= this.#saldo)//condición para no pasar el valor que se tiene y quedar en negativo
+        this.#saldo -= valor;  //tambén se puede utilizar this.saldo = this.saldo - valor
     }
 }
 
@@ -32,5 +34,6 @@ cuentaDeLeonardo = new CuentaCorriente();
 
 cuentaDeLeonardo.depositoEnCuenta(100);
 console.log(cuentaDeLeonardo);
-cuentaDeLeonardo.retirarDeCuenta(50);
+cuentaDeLeonardo.retirarDeCuenta(100);
 console.log(cuentaDeLeonardo);
+cuentaDeLeonardo.depositoEnCuenta(-10);
