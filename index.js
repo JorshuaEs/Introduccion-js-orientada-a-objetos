@@ -13,7 +13,6 @@ cuentaDeLeonardo.agencia = '001';
 cuentaDeLeonardo.cliente = cliente;//composición de clases unir clases que estan relacionadas de alguna forma
 
 
-
 let saldo = cuentaDeLeonardo.verSaldo();
 
 
@@ -27,13 +26,14 @@ cliente2.rutCliente = '47755555';
 
 const cuentaDeMaria = new CuentaCorriente();
 cuentaDeMaria.numero = '2';
-cuentaDeMaria.agencia = '001';
-//cuentaDeMaria.cliente = cliente2; //toda variable definida sin valor es mejor inicianizarla null esto permite hace una mejor gestion del codigo y la memorua
+cuentaDeMaria.agencia = '002';
+cuentaDeMaria.cliente = cliente2;
 
-if (cuentaDeMaria.cliente)
-    console.log(cuentaDeMaria.cliente);
-else
-    console.log(cuentaDeMaria);
+console.log(cuentaDeMaria.cliente);
+
+cuentaDeMaria.cliente = 0;
+
+console.log(cuentaDeMaria.cliente);
 
 let parametroValor = 100;
 /*

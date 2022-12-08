@@ -1,12 +1,24 @@
 export class CuentaCorriente
 {
-    cliente;
+    #cliente;
     numero;
     agencia;
     #saldo;//variables con atributos privados
 
+    //set es parecido a una funcion pero no es una como tal
+
+    //permite gestionar de una mejor manera las variables utilizadas como atributos privados
+    set cliente(valor){
+        if(valor instanceof Cliente)
+        this.#cliente = valor;
+    }
+
+    get cliente(){
+        return this.#cliente;
+    }
+
     constructor(){
-        this.cliente = null; 
+        this.#cliente = null; 
         //undefined, se utilizará ya que está declarado pero no se ha definido cuales son sus datos
         //la consola no puede acceder a las variables undefined
         //Una buena practica es no tener variables undefined y se no se declara todavia es recomnedable utilizar null
