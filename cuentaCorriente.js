@@ -1,3 +1,5 @@
+import {Cliente} from './cliente.js';
+
 export class CuentaCorriente
 {
     #cliente;
@@ -17,13 +19,10 @@ export class CuentaCorriente
         return this.#cliente;
     }
 
-    constructor(){
-        this.#cliente = null; 
-        //undefined, se utilizará ya que está declarado pero no se ha definido cuales son sus datos
-        //la consola no puede acceder a las variables undefined
-        //Una buena practica es no tener variables undefined y se no se declara todavia es recomnedable utilizar null
-        this.numero = '';
-        this.agencia = '';
+    constructor(cliente, numero, agencia){//Contructor es una funcion que se ejecuta cuando se genera una instancia
+        this.cliente= cliente;
+        this.numero = numero;
+        this.agencia = agencia;
         this.#saldo = 0;
 
     }

@@ -3,4 +3,10 @@ export class Cliente
     nombreCliente;
     dniCliente;
     rutCliente;
-}//clase, es el molde para generar las instacias necesarias para manejar la información
+
+    constructor(nombreCliente, dniCliente, rutCliente){
+        this.nombreCliente = nombreCliente;
+        this.dniCliente = dniCliente;
+        this.rutCliente = rutCliente;
+    }
+}
