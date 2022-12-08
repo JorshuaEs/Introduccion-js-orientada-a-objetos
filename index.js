@@ -11,9 +11,16 @@ const cuentaDeMaria = new CuentaCorriente(cliente2, '2', '002');
 //cuentaDeLeonardo-#saldo = 10;
 let saldo = cuentaDeLeonardo.verSaldo();
 
-
 saldo = cuentaDeLeonardo.depositoEnCuenta(150);
-console.log(`El saldo actual (Cuenta Leonardo) ${saldo}`);
 
-console.log(cuentaDeMaria.cliente);
-console.log(cuentaDeLeonardo.cliente);
+console.log(CuentaCorriente.cantidadCuentas);
+
+
+new CuentaCorriente(cliente2, '2', '002');
+new CuentaCorriente(cliente2, '2', '002');
+new CuentaCorriente(cliente2, '2', '002');
+new CuentaCorriente(cliente2, '2', '002');
+new CuentaCorriente(cliente2, '2', '002');
+new CuentaCorriente(cliente2, '2', '002');
+new CuentaCorriente(cliente2, '2', '002');
+console.log(CuentaCorriente.cantidadCuentas);

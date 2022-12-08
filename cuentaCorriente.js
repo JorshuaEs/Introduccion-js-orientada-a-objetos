@@ -6,6 +6,7 @@ export class CuentaCorriente
     numero;
     agencia;
     #saldo;//variables con atributos privados
+    static cantidadCuentas = 0;//declarar un atributo estatico, es un atributo en general e incambiante
 
     //set es parecido a una funcion pero no es una como tal
 
@@ -24,6 +25,7 @@ export class CuentaCorriente
         this.numero = numero;
         this.agencia = agencia;
         this.#saldo = 0;
+        CuentaCorriente.cantidadCuentas++;
 
     }
 
